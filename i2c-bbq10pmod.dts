@@ -7,15 +7,17 @@
 	fragment@0 {
 		target = <&i2c1>;
 		__overlay__ {
+			/* needed to avoid dtc warning */
 			#adress-cells =<1>;
 			#size-cells =<0>;
+			
 			bbq10pmod@1f {
 				compatible = "arturo182,bbq10pmod";
 				
-				reg = <0x1f>;
+				reg = <0x1F>;
 				
-				irq-gpio = <&gpio 4 0x2>;
-				interrupts = <4 2>;
+				irq-gpio = <&gpio 4 0x2>; 		/* IRQF_TRIGGER_FALLING */
+				interrupts = <4 2>;			/* high-to-low edge triggered */
 				interrupt-parent = <&gpio>;
 				interrupt-controller;
 			};
