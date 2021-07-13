@@ -13,8 +13,8 @@
 				
 				reg = <0x1f>;
 				
-				irq-gpio = <&gpio 11 0x2>;
-				interrupts = <11 2>;
+				irq-gpio = <&gpio 4 0x2>;
+				interrupts = <4 2>;
 				interrupt-parent = <&gpio>;
 				interrupt-controller;
 			};
