@@ -6,8 +6,9 @@
 
 	fragment@0 {
 		target = <&i2c1>;
-		
 		__overlay__ {
+			#adress-cells =<1>;
+			#size-cells =<0>;
 			bbq10pmod@1f {
 				compatible = "arturo182,bbq10pmod";
 				
