@@ -1,5 +1,4 @@
-# bbq10pmod Kernel Module
-
+# Kernel Module for Keyboard Featherwing
 ## Raspberry Pi
 
 ### Wiring
@@ -10,7 +9,9 @@ Pi          -   Module
 GND         -   GND
 GPIO2/SDA1  -   SDA
 GPIO3/SCL1  -   SCL
-GPIO11      -   INT
+GPIO4      -   INT
+
+I2C Addr: 0x1F
 ```
 
 ### Installation
