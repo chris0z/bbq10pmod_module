@@ -21,7 +21,7 @@ Installing this Kernel Module on a Raspberry Pi is quite straight forward.
 * `sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install git raspberrypi-kernel-headers`
 * `git clone https://github.com/arturo182/bbq10pmod_module.git && cd bbq10pmod_module`
 * `make && make dtbo`
-* `sudo cp bbq10pmod.ko /lib/modules/4.19.57+/kernel/drivers/i2c/bbq10pmod.ko`
+* `sudo cp bbq10pmod.ko /lib/modules/5.10.17+/kernel/drivers/i2c/bbq10pmod.ko`
 * `sudo cp i2c-bbq10pmod.dtbo /boot/overlays/`
 * `sudo sh -c "echo dtoverlay=i2c-bbq10pmod >> /boot/config.txt"`
 * `sudo sh -c "echo bbq10pmod >> /etc/modules"`
