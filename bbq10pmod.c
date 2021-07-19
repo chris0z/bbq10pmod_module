@@ -130,11 +130,15 @@ static int bbq10pmod_write_data(struct bbq10pmod_data *drv_data, u8 reg, const u
 	struct i2c_client *client = drv_data->client;
 	int error;
 
-	reg |= 0x80;
+	//reg |= 0x80;\
+	u8 buff[2];
+	buff[0] = reg | 0x80;
+	buff[1] = *buf;
 
 	struct i2c_msg msgs[] = {
-		{ .addr = client->addr, .flags = 0, .len = sizeof(u8), .buf = &reg, },
-		{ .addr = client->addr, .flags = 0, .len = len, .buf = (u8*)buf, },
+		//{ .addr = client->addr, .flags = 0, .len = sizeof(u8), .buf = &reg, },
+		//{ .addr = client->addr, .flags = 0, .len = len, .buf = (u8*)buf, },
+		{ .addr = client->addr, .flags = 0, .len = sizeof(buff), .buf = buff, },
 	};
 
 	error = i2c_transfer(client->adapter, msgs, ARRAY_SIZE(msgs));
